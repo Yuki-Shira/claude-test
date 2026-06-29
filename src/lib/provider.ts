@@ -61,7 +61,7 @@ export class MockLanguageModel implements LanguageModelV1 {
     // Count tool messages to determine which step we're on
     const toolMessageCount = messages.filter((m) => m.role === "tool").length;
 
-    // Determine component type from the original user prompt
+    // Determine component type from the original user prompt.
     const promptLower = userPrompt.toLowerCase();
     let componentType = "counter";
     let componentName = "Counter";
@@ -74,7 +74,7 @@ export class MockLanguageModel implements LanguageModelV1 {
       componentName = "Card";
     }
 
-    // Step 1: Create component file
+    // Step 1: Create component file.
     if (toolMessageCount === 1) {
       const text = `I'll create a ${componentName} component for you.`;
       for (const char of text) {
